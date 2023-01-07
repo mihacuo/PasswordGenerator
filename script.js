@@ -113,6 +113,7 @@ function getPasswordOptions() {
     }
   } while (!flag);
 
+  // flag indicated that user has not chosen at least 1 mandatory security option
   flag = false;
   alert(
     "Please choose one of the security options, Lowercase/Uppercase/Numeric characters/Special characters"
@@ -123,26 +124,86 @@ function getPasswordOptions() {
     options.numeric = confirm("Do you want numeric characters?");
     options.special = confirm("Do you want special characters?");
 
-    flag = options.lowercase || options.uppercase || options.numeric || options.special;
+    // lets work out how many security options there are?
+    flag =
+      options.lowercase + options.uppercase + options.numeric + options.special;
 
     if (!flag) {
-      alert('You need to choose at least 1 security option, please retry');
+      alert("You need to choose at least 1 security option, please retry");
     }
   } while (!flag);
 
+  options.flag = flag;
   return options;
+}
+
+function sleep(delay) {
+  var start = new Date().getTime();
+  while (new Date().getTime() < start + delay);
 }
 
 // Function for getting a random element from an array
 function getRandom(arr) {
   const randomIndex = Math.floor(Math.random() * arr.length);
-  return arr[randomIndex]; 
+  return arr[randomIndex];
+}
+
+// this function will mix up the password before the output
+function randomizeString(pswd) {
+  mixedPassword = '';
+  //console.log(pswd);
+  pswd = pswd.split('');
+  // will iterate as many times as the length of array
+  iterNeeded = pswd.length;
+  //console.log(pswd.length);
+  //console.log(pswd)
+  for (var i = iterNeeded; i > 0; i--) {
+    //console.log(i + '--iteration ');
+    randIndex = Math.floor(Math.random() * i);
+    //console.log('Random index = ' + randIndex);
+    // will get a random char from the password
+    mixedPassword += pswd.splice(randIndex, 1);
+  }
+  return mixedPassword;
 }
 
 // Function to generate password with user input
 function generatePassword() {
+  ourPassword = "";
   options = getPasswordOptions();
-  console.log(options);
+  //console.log(options);
+  let fullCycles = Math.ceil(options.passwordLen / options.flag);
+
+  // lets generate password for full cycles, which might give us a 
+  // longer password
+  for (var i = 0; i < fullCycles; i++) {
+    if (options.lowercase) {
+      ourPassword += getRandom(lowerCasedCharacters);
+    }
+    if (options.uppercase) {
+      ourPassword += getRandom(upperCasedCharacters);
+    }
+    if (options.special) {
+      ourPassword += getRandom(specialCharacters);
+    }
+    if (options.numeric) {
+      ourPassword += getRandom(numericCharacters);
+    }
+    //console.log(ourPassword)
+  }
+  
+  // let's if we need to shorten our password
+  if (ourPassword.length != options.passwordLen) {
+
+    //let's see the extra characters
+    extraChars = ourPassword.length - options.passwordLen
+    //calculate end index or ourPassword
+    sliceEndIndex = ourPassword.length - extraChars;
+    ourPassword = ourPassword.slice(0, sliceEndIndex);
+  }
+  //now we need to randimise the characters positions, and return
+  return randomizeString(ourPassword)
+  
 }
 
 // Get references to the #generate element
