@@ -1,79 +1,69 @@
-# Module 5 Challenge: Password Generator
+# Strong Password Generator
 
-## Overview
- 
-This week’s challenge requires you to create an application that an employee can use to generate a random password based on criteria they’ve selected by modifying starter code. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished user interface that is responsive, ensuring that it adapts to multiple screen sizes.
+This site will generate password that would meet most requirements of the sites, where password should be used for login purposes
 
-The password can include special characters. If you’re unfamiliar with these, see this [list of Password Special Characters from the OWASP Foundation](https://www.owasp.org/index.php/Password_special_characters).
+## Screenshot
+![app screenshot](./password_gen_screenshot.png)
 
-## Instructions
+## Description
 
-The following image shows the web application's appearance and functionality:
+User will chose the length of the password. 
+if length entered is less than 10 or more than 64, 
+user will have to re-enter, due to the securoty reasons.
 
-![password generator demo](./assets/05-javascript-challenge-demo.png)
+User will be also able to chose security fetures of the generated password, ie shuld it include:
 
+- lowercase characters
+- uppercase characters
+- numeric characters
+- special characters
 
-* Generate a password when the button is clicked
-  * Present a series of prompts for password criteria
-    * Length of password
-      * At least 10 characters but no more than 64.
-    * Character types
-      * Lowercase
-      * Uppercase
-      * Numeric
-      * Special characters ($@%&*, etc)
-  * Code should validate for each input and at least one character type should be selected
-  * Once prompts are answered then the password should be generated and displayed in an alert or written to the page
+## Getting Started
 
-## Grading Requirements
-
-This challenge is graded based on the following criteria: 
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the above acceptance criteria plus the following:
-
-  * The challenge should not produce any errors in the console when you inspect it using Chrome DevTools.
-
-### Deployment: 32%
-
-* Application deployed at live URL.
-
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository that contains application code.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the challenge instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality README file with description, screenshot, and link to deployed application.
+Live version of the app can be loaded from the 
+Github pages:
+https://mihacuo.github.io/PasswordGenerator/
 
 
-## Review
+### Dependencies
 
-You are required to submit the following for review:
+Any modern web browser
 
-* The URL of the deployed application.
+### Installing
 
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
+This app is run from the url
+https://mihacuo.github.io/PasswordGenerator/
 
----
+### Executing program
 
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+Click butten "generate password"
+Follow promts and respond to chose the length of the password 
+and the security options
+
+
+## Help
+
+contact author at
+mihhail.odnolko@gmail.com
+
+## Authors
+
+Contributors names and contact info
+
+Aleksandr Riabov
+https://github.com/AleksandrRiabov
+
+
+## Version History
+
+* 1.0
+    * Initial release
+
+## License
+
+This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+
+## Acknowledgments
+
+JavaScript tutorials were extensively researched at:
+https://www.w3schools.com/js/default.asp
