@@ -61,7 +61,7 @@ https://github.com/AleksandrRiabov
 
 ## License
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+This project is licensed under the [Password Generator] License - see the LICENSE.md file for details
 
 ## Acknowledgments
 
