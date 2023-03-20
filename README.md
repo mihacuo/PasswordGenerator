@@ -9,9 +9,9 @@ This site will generate password that would meet most requirements of the sites,
 
 User will chose the length of the password. 
 if length entered is less than 10 or more than 64, 
-user will have to re-enter, due to the securoty reasons.
+user will have to re-enter, due to the security reasons.
 
-User will be also able to chose security fetures of the generated password, ie shuld it include:
+User will be also able to chose security fetures of the generated password, ie should it include:
 
 - lowercase characters
 - uppercase characters
